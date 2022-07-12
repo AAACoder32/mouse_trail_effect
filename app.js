@@ -21,8 +21,6 @@ class Particle {
   constructor() {
     this.x = mouse.x;
     this.y = mouse.y;
-    //this.x = Math.random() * canvas.width;
-    //this.y = Math.random() * canvas.height;
     this.size = Math.random() * 10 + 1
     this.speedX = Math.random() * 3 - 1.5;
     this.speedY = Math.random() * 3 - 1.5;
@@ -45,7 +43,23 @@ class Particle {
   }
 
 }
+// Touch event for mobile phones specific
+// For pc or laptop you can replace these
+// two functions with below touch event
+// functions 
+/*
+canvas.addEventListener('click', (e) => {
+  mouse.x = e.x
+  mouse.y = e.y
+  initParticles(10);
+});
 
+canvas.addEventListener('mousemove', (e) => {
+  mouse.x = e.x;
+  mouse.y = e.y;
+  initParticles(1);
+});
+*/
 // Touch trailing of particles
 canvas.addEventListener('touchstart', (e) => {
   mouse.x = e.touches[0].clientX;
@@ -80,7 +94,6 @@ function handleParticles() {
 
 //Animating the particles 
 function animate() {
-  //ctx.clearRect(0, 0, canvas.width, canvas.height);
   ctx.fillStyle = 'rgba(0,0,0,0.1)';
   ctx.fillRect(0, 0, canvas.width, canvas.height);
   handleParticles();
