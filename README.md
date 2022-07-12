@@ -1,1 +1,2 @@
-# mouse_trail_effect
+# Mouse Taril Effect
+# In Vannila JS
